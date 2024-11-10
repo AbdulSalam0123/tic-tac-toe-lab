@@ -34,7 +34,7 @@ const render = ()=>
     updateMessage();
 }
 
-function updateBoard()
+const updateBoard= ()=>
 {
     board.forEach((cell, index) =>
     {
@@ -53,7 +53,7 @@ function updateBoard()
         }
     });
 }
-function updateMessage()
+const updateMessage= () =>
 {
     if (winner)
     {
@@ -74,7 +74,7 @@ function updateMessage()
 /*----------------------------- Event Listeners -----------------------------*/
 window.onload = init;
 
-function handleClick(event)
+const handleClick = (event) =>
 {
     const squareIndex = event.target.id;
     if (board[squareIndex] || winner) return;
@@ -85,11 +85,11 @@ function handleClick(event)
     render();
 }
 
-function placePiece(index)
+const placePiece = (index)=>
 {
     board[index] = turn;
 }
-function checkForWinner() 
+const checkForWinner = ()=> 
 {
     winningCombos.forEach(combo => 
     {
@@ -100,14 +100,14 @@ function checkForWinner()
         }
     });
 }
-function checkForTie() 
+const checkForTie = () => 
 {
     if (!winner && !board.includes(''))
     {
         tie = true;
     }
 }
-function switchPlayerTurn()
+const switchPlayerTurn = () =>
 {
     if (!winner)
     {
